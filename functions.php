@@ -102,40 +102,92 @@ add_filter("render_block", function ($block_content, $block) {
 /**
  * Function for adding meta tags.
  *
- * @return void
+ * @return null
  */
-function sleipnir_add_meta_tags(): void {
-    global $post;
+function sleipnir_add_meta_tags(): null {
 
+    /**
+     * Clean up and escape a text string.
+     *
+     * @param string $text
+     * @return string
+     */
     function cleanup_text (string $text): string {
         $text = strip_tags($text);
         $text = strip_shortcodes($text);
         $text = trim($text);
-        $text = str_replace("\n", '', $text);
-        return $text;
+        $text = str_replace(["\n", "\t", "\r"], '', $text);
+        return esc_attr($text);
     }
 
-    if ( is_singular() ) {
-        $post_description = cleanup_text($post->post_content);
-        $post_description = substr($post_description, 0, 500);
-        echo '<meta name="description" content="' . $post_description . '" />';
+    /**
+     * Print a description meta tag.
+     *
+     * @param string $description
+     * @return void
+     */
+    function echo_meta_tag(string $description): void {
+        $description = cleanup_text($description);
+        echo '<meta name="description" content="' . $description . '">';
     }
 
-    if ( is_home() ) {
-        $blog_description = get_bloginfo('description');
-        if ($blog_description) {
-            $blog_description = cleanup_text($blog_description);
-            echo '<meta name="description" content="' . $blog_description . '" />';
+    /**
+     * Get meta description depending on content type.
+     *
+     * @return string
+     */
+    function get_meta_description(): string {
+        global $post;
+
+        if ( is_singular() ) {
+            $post_description = substr($post->post_content, 0, 500);
+            return $post_description;
         }
+
+        if ( is_home() ) {
+            $blog_description = get_bloginfo('description');
+            if ($blog_description) {
+                return $blog_description;
+            }
+        }
+
+        if ( is_category() ) {
+            $category_description = category_description();
+            if ($category_description) {
+                return $category_description;
+            }
+        }
+
+        if ( is_archive() ) {
+            if (is_category() || is_tag() || is_tax()) {
+                $meta_description = tag_description();
+                return $meta_description;
+
+                if (empty($meta_description)) {
+                    $meta_description = get_bloginfo('description');
+                    return $meta_description;
+                }
+            }
+            
+            if (is_author()) {
+                $meta_description = get_the_author_meta('description');
+                return $meta_description;
+            }
+            
+            if (is_date()) {
+                $meta_description = 'Posts from ' . get_the_date('F Y');
+                return $meta_description;
+            }
+        }
+
+        $meta_description = get_bloginfo('description');
+
+        return $meta_description;
     }
 
-    if ( is_category() ) {
-        $category_description = category_description();
-        if ($category_description) {
-            $category_description = cleanup_text($category_description);
-            echo '<meta name="description" content="' . $category_description . '" />';
-        }
-    }
+    $meta_description = get_meta_description();
+
+    return echo_meta_tag($meta_description);
 }
 
 // Register the function for adding meta tags.
