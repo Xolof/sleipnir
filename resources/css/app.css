@@ -1,3 +1,46 @@
 @import "tailwindcss" theme(static);
 @source "../views/";
 @source "../../app/";
+
+body {
+     @apply bg-blue-200
+}
+
+h2.wp-block-heading,
+h2.entry-title {
+    @apply text-2xl mb-4
+}
+
+.brand.block {
+    @apply no-underline
+}
+
+.widget,
+.entry-summary,
+.comment-content,
+.e-content {
+    @apply mb-4
+}
+
+.comment-form-cookies-consent {
+    @apply text-xs mb-2 py-2
+}
+
+form#commentform {
+    @apply mb-6
+}
+
+textarea#comment,
+input#author,
+input#email,
+input#url {
+    @apply block border-solid border-black outline p-2 w-95
+}
+
+input#submit {
+    @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
+}
+
+.forminator-guttenberg .forminator-custom-form div.forminator-row.forminator-row-last > div > div > button {
+    @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
+}
