@@ -2,6 +2,7 @@
 
 use Roots\Acorn\Application;
 use App\Helpers\SleipnirMetaTagger;
+use App\Helpers\SleipnirWebpConverter;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,3 +105,12 @@ add_filter("render_block", function ($block_content, $block) {
 // Add meta tags.
 $metaTagger = new SleipnirMetaTagger();
 add_action( 'wp_head', [$metaTagger, 'add_meta_tags']);
+
+
+$webPConverter = new SleipnirWebpConverter();
+
+// Convert images to WebP format on upload
+add_filter('wp_handle_upload', [$webPConverter, 'convert_to_webp_on_upload']);
+
+// Add filter for generating metadata for WebP files.
+add_filter('wp_generate_attachment_metadata', [$webPConverter, 'update_webp_metadata'], 10, 2);
