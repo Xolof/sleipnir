@@ -1,6 +1,7 @@
 <?php
 
 use Roots\Acorn\Application;
+use App\Helpers\SleipnirMetaTagger;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,8 @@ add_filter("render_block", function ($block_content, $block) {
 
 	return $block_content;
 }, 10, 2);
+
+
+// Add meta tags.
+$metaTagger = new SleipnirMetaTagger();
+add_action( 'wp_head', [$metaTagger, 'add_meta_tags']);
