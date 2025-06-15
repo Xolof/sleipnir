@@ -40,6 +40,7 @@
   },
   "require": {
     "php": ">=8.2",
+    "davidwebca/wordpress-menu-classes": "^2.0",
     "roots/acorn": "^5.0"
   },
   "require-dev": {
