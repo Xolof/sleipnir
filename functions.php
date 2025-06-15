@@ -58,3 +58,43 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+
+/*
+|--------------------------------------------------------------------------
+| Xolof's custom adaptations
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Remove Custom CSS section in admin.
+ */
+add_action("customize_register", function ($wp_customize)
+{
+	$wp_customize->remove_section("custom_css");
+});
+
+/** Remove dashicons */
+add_action("wp_print_styles", "liberdev_deregister_styles", 100);
+
+function liberdev_deregister_styles()
+{
+	if (!is_user_logged_in()) {
+		wp_deregister_style("dashicons");
+	}
+}
+
+/**
+ * Make images in blocks lazy load.
+ * Source: https://generate.support/topic/adding-lazy-loading-to-images-in-a-gb-query-loop/
+ * Add the CSS class add-lazy-load to images that should be lazy loaded.
+ */
+add_filter("render_block", function ($block_content, $block) {
+	if (!is_admin() && !empty($block["attrs"]["className"]) && strpos($block["attrs"]["className"], "add-lazy-load") !== false) {
+		$myreplace = "<img";
+		$myinsert = "<img loading='lazy' ";
+		$block_content = str_replace($myreplace, $myinsert, $block_content);
+	}
+
+	return $block_content;
+}, 10, 2);
