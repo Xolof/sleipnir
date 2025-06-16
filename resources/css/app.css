@@ -99,3 +99,7 @@ p {
 .wp-block-archives-list li {
     @apply mb-2
 }
+
+.comment {
+    @apply border border-solid border-zinc-400 p-2 rounded
+}
