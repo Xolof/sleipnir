@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, p, time, span, label, footer {
 }
 
 a {
-    @apply text-sky-800
+    @apply text-sky-800 selection:bg-green-500
 }
 
 h2.wp-block-heading,
@@ -30,6 +30,10 @@ h1.p-name {
 }
 
 .brand.block {
+    @apply no-underline text-slate-900
+}
+
+.mobile-nav-item {
     @apply no-underline
 }
 
@@ -96,7 +100,8 @@ p {
 }
 
 .wp-block-categories-list .cat-item,
-.wp-block-archives-list li {
+.wp-block-archives-list li,
+.wp-block-latest-posts__list.wp-block-latest-posts li {
     @apply mb-2
 }
 
