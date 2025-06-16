@@ -3,7 +3,7 @@
 @source "../../app/";
 
 @utility slpnr-button {
-    @apply cursor-pointer hover:bg-slate-500 hover:text-slate-900 bg-slate-900 rounded
+    @apply cursor-pointer hover:bg-slate-300 hover:text-slate-900 bg-slate-900 rounded
     hover:outline-slate-300 focus:outline-2 focus:outline-offset-2 active:bg-zinc-600
 }
 
