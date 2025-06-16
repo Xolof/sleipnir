@@ -15,7 +15,7 @@
         <!-- Mobile Menu -->
         <div x-show="mobileMenuIsOpen"
           @click.away="mobileMenuIsOpen = false"
-          class="fixed inset-0 md:hidden transition-transform duration-300 bg-zinc-50 z-900"
+          class="fixed inset-0 md:hidden transition-transform duration-300 bg-zinc-50 z-900 p-4"
           :class="{ 'translate-x-0': mobileMenuIsOpen, '-translate-x-full': !mobileMenuIsOpen }"
         >
             <div class="flex justify-between p-4">
