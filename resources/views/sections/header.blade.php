@@ -5,7 +5,7 @@
 
     <nav x-data="{ mobileMenuIsOpen: false }" class="flex">
         <!-- Hamburger Button -->
-        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" class="p-4 md:hidden justify-end" aria-label="Toggle menu">
+        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" class="p-4 md:hidden justify-end cursor-pointer" aria-label="Toggle menu">
             <svg class="h-6 w-6 text-zinc-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path x-show="!mobileMenuIsOpen" d="M4 6h16M4 12h16M4 18h16" />
                 <path x-show="mobileMenuIsOpen" d="M6 18L18 6M6 6l12 12" />
@@ -22,7 +22,7 @@
                 <div class="text-zinc-800 text-xl">
                     <a href="/" class="brand block">{!! $siteName !!}</a>
                 </div>
-                <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl" aria-label="Close menu">
+                <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl cursor-pointer" aria-label="Close menu">
                     ×
                 </button>
             </div>
