@@ -57,6 +57,10 @@ input#url,
     @apply block border-solid border-slate-200 outline p-2 w-full text-zinc-800 focus:outline-green-700 rounded
 }
 
+.forminator-ui.forminator-custom-form:not(.forminator-size--small)[data-grid=open] .forminator-row:not(:last-child) {
+    @apply mb-3
+}
+
 input#submit {
     @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
 }
