@@ -96,7 +96,8 @@ p {
 }
 
 .wp-block-categories-list .cat-item,
-.wp-block-archives-list li {
+.wp-block-archives-list li,
+.wp-block-latest-posts__list.wp-block-latest-posts li {
     @apply mb-2
 }
 
