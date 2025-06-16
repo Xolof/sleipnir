@@ -86,22 +86,6 @@ function liberdev_deregister_styles()
 	}
 }
 
-/**
- * Make images in blocks lazy load.
- * Source: https://generate.support/topic/adding-lazy-loading-to-images-in-a-gb-query-loop/
- * Add the CSS class add-lazy-load to images that should be lazy loaded.
- */
-add_filter("render_block", function ($block_content, $block) {
-	if (!is_admin() && !empty($block["attrs"]["className"]) && strpos($block["attrs"]["className"], "add-lazy-load") !== false) {
-		$myreplace = "<img";
-		$myinsert = "<img loading='lazy' ";
-		$block_content = str_replace($myreplace, $myinsert, $block_content);
-	}
-
-	return $block_content;
-}, 10, 2);
-
-
 // Add meta tags.
 $metaTagger = new SleipnirMetaTagger();
 add_action( 'wp_head', [$metaTagger, 'add_meta_tags']);
