@@ -108,3 +108,12 @@ p {
 .comment {
     @apply border border-solid border-zinc-400 p-2 rounded
 }
+
+
+.wp-block-verse {
+    @apply italic pl-4;
+}
+
+.wp-block-quote {
+    @apply pl-4
+}
