@@ -51,8 +51,10 @@ form#commentform {
 textarea#comment,
 input#author,
 input#email,
-input#url {
-    @apply block border-solid border-black outline p-2 w-95
+input#url,
+.wp-block-search__input,
+.search-form input[type=search] {
+    @apply block border-solid border-slate-200 outline p-2 w-full text-zinc-800 focus:outline-green-700 rounded
 }
 
 input#submit {
