@@ -10,11 +10,13 @@ class SleipnirMetaTagger
     /**
      * Function for adding meta tags.
      */
-    public function add_meta_tags(): null
+    public function add_meta_tags(): void
     {
         $meta_description = $this->get_meta_description();
 
-        return $this->echo_meta_tag($meta_description);
+        $meta_tag = $this->echo_meta_tag($meta_description);
+
+        echo $meta_tag;
     }
 
     /**
@@ -33,10 +35,10 @@ class SleipnirMetaTagger
     /**
      * Print a description meta tag.
      */
-    protected function echo_meta_tag(string $description): void
+    protected function echo_meta_tag(string $description): string
     {
         $description = $this->cleanup_text($description);
-        echo '<meta name="description" content="'.$description.'">';
+        return '<meta name="description" content="'.$description.'">';
     }
 
     /**
