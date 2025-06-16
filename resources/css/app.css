@@ -85,6 +85,8 @@ input#submit {
     @apply px-4 py-2 border-solid border-black outline text-zinc-200 slpnr-button
 }
 
-.forminator-guttenberg .forminator-custom-form div.forminator-row.forminator-row-last > div > div > button {
-    @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
+.forminator-guttenberg .forminator-custom-form div.forminator-row.forminator-row-last>div>div>button,
+.wp-block-search__button.wp-element-button,
+.search-form button {
+    @apply px-6 py-2 border-solid border-black outline cursor-pointer text-zinc-200 slpnr-button
 }
