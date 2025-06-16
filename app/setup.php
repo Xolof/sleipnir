@@ -28,7 +28,7 @@ add_filter('block_editor_settings_all', function ($settings) {
  *
  * @return void
  */
-add_filter('admin_head', function () {
+add_filter('admin_head', function (): void {
     if (! get_current_screen()?->is_block_editor()) {
         return;
     }
@@ -62,7 +62,7 @@ add_filter('theme_file_path', function ($path, $file) {
  *
  * @return void
  */
-add_action('after_setup_theme', function () {
+add_action('after_setup_theme', function (): void {
     /**
      * Disable full-site editing support.
      *
@@ -135,7 +135,7 @@ add_action('after_setup_theme', function () {
  *
  * @return void
  */
-add_action('widgets_init', function () {
+add_action('widgets_init', function (): void {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget' => '</section>',
