@@ -4,7 +4,7 @@
 
 @utility slpnr-button {
     @apply cursor-pointer hover:bg-slate-500 hover:text-slate-900 bg-slate-900 rounded
-    hover:outline-slate-300 focus:outline-2 focus:outline-offset-2 focus:outline-green-700 active:bg-zinc-600
+    hover:outline-slate-300 focus:outline-2 focus:outline-offset-2 active:bg-zinc-600
 }
 
 body {
@@ -12,11 +12,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, p, time, span, label, footer {
-    @apply text-zinc-800 selection:bg-green-500 selection:text-slate-900
+    @apply text-zinc-800 selection:bg-sky-300 selection:text-slate-900
 }
 
 a {
-    @apply text-sky-800 selection:bg-green-500
+    @apply text-sky-800 selection:bg-sky-300
 }
 
 h2.wp-block-heading,
@@ -58,7 +58,7 @@ input#email,
 input#url,
 .wp-block-search__input,
 .search-form input[type=search] {
-    @apply block border-solid border-slate-200 outline p-2 w-full text-zinc-800 focus:outline-green-700 rounded
+    @apply block border-solid outline-1 focus:outline-2 p-2 w-full text-zinc-800 rounded
 }
 
 .forminator-ui.forminator-custom-form:not(.forminator-size--small)[data-grid=open] .forminator-row:not(:last-child) {
@@ -82,11 +82,11 @@ input#url,
 }
 
 input#wp-comment-cookies-consent {
-    @apply border-solid border-slate-200 outline p-2 focus:outline-green-700
+    @apply border-solid border-slate-800 p-2
 }
 
 input#submit {
-    @apply px-4 py-2 border-solid border-black outline text-zinc-200 slpnr-button
+    @apply px-4 py-2 border-solid border-slate-800 text-zinc-200 slpnr-button
 }
 
 .forminator-guttenberg .forminator-custom-form div.forminator-row.forminator-row-last>div>div>button,
