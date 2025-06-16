@@ -30,6 +30,10 @@ h1.p-name {
 }
 
 .brand.block {
+    @apply no-underline text-slate-900
+}
+
+.mobile-nav-item {
     @apply no-underline
 }
 
