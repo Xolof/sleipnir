@@ -77,6 +77,10 @@ input#url,
     @apply w-2/6
 }
 
+input#wp-comment-cookies-consent {
+    @apply border-solid border-slate-200 outline p-2 focus:outline-green-700
+}
+
 input#submit {
     @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
 }
