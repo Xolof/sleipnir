@@ -61,6 +61,22 @@ input#url,
     @apply mb-3
 }
 
+.search-form {
+    @apply flex justify-start
+}
+
+.search-form label {
+    @apply w-4/6
+}
+
+.search-form input[type=search] {
+    @apply w-16/17
+}
+
+.search-form button {
+    @apply w-2/6
+}
+
 input#submit {
     @apply px-4 py-2 border-solid border-black outline cursor-pointer hover:bg-orange-300
 }
