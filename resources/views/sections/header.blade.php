@@ -16,7 +16,7 @@
         <div x-show="mobileMenuIsOpen" @click.away="mobileMenuIsOpen = false" class="fixed inset-0 md:hidden transition-transform duration-300 bg-zinc-50 z-900" :class="{ 'translate-x-0': mobileMenuIsOpen, '-translate-x-full': !mobileMenuIsOpen }">
             <div class="flex justify-between p-4">
                 <div class="text-zinc-800 text-xl">
-                    <a href="/" class="no-underline">{!! $siteName !!}</a>
+                    <a href="/" class="brand block">{!! $siteName !!}</a>
                 </div>
                 <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl" aria-label="Close menu">
                     ×
@@ -28,7 +28,7 @@
                 'theme_location' => 'primary_navigation',
                 "menu_class" => "flex flex-col p-4 space-y-2",
                 'echo' => false,
-                'a_class_0' => "inline-flex items-center mb-2 no-underline"
+                'a_class_0' => "inline-flex items-center mb-2 mobile-nav-item"
                 ]) !!}
             </nav>
             @endif
@@ -48,4 +48,5 @@
             @endif
         </div>
     </nav>
+
 </header>
