@@ -20,8 +20,13 @@ a {
 }
 
 h2.wp-block-heading,
-h2.entry-title {
+h2.entry-title,
+.comments h2 {
     @apply text-2xl mb-4
+}
+
+h1.p-name {
+    @apply text-3xl mb-4
 }
 
 .brand.block {
