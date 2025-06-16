@@ -26,11 +26,11 @@ add_filter('block_editor_settings_all', function ($settings) {
 /**
  * Inject scripts into the block editor.
  *
- * @return void
+ * @return null
  */
-add_filter('admin_head', function () {
+add_filter('admin_head', function (): null {
     if (! get_current_screen()?->is_block_editor()) {
-        return;
+        return null;
     }
 
     $dependencies = json_decode(Vite::content('editor.deps.json'));
@@ -44,6 +44,8 @@ add_filter('admin_head', function () {
     echo Vite::withEntryPoints([
         'resources/js/editor.js',
     ])->toHtml();
+
+    return null;
 });
 
 /**
@@ -53,7 +55,7 @@ add_filter('admin_head', function () {
  */
 add_filter('theme_file_path', function ($path, $file) {
     return $file === 'theme.json'
-        ? public_path('build/assets/theme.json')
+        ? public_path('build/assets/theme.json') // @phpstan-ignore function.notFound
         : $path;
 }, 10, 2);
 
@@ -62,7 +64,7 @@ add_filter('theme_file_path', function ($path, $file) {
  *
  * @return void
  */
-add_action('after_setup_theme', function () {
+add_action('after_setup_theme', function (): void {
     /**
      * Disable full-site editing support.
      *
@@ -135,7 +137,7 @@ add_action('after_setup_theme', function () {
  *
  * @return void
  */
-add_action('widgets_init', function () {
+add_action('widgets_init', function (): void {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget' => '</section>',

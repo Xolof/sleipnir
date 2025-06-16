@@ -10,10 +10,10 @@ class SleipnirWebpConverter
     /**
      * Convert jpeg and png images to webp on upload.
      *
-     * @param array $upload
      * @return void
      */
-    public function convert_to_webp_on_upload(array $upload): array {
+    public function convert_to_webp_on_upload(array $upload): array
+    {
         $image_types = ['image/jpeg', 'image/png'];
         if (in_array($upload['type'], $image_types)) {
             $file_path = $upload['file'];
@@ -47,17 +47,15 @@ class SleipnirWebpConverter
 
     /**
      * Generate metadata for WebP files.
-     *
-     * @param array $metadata
-     * @param integer $attachment_id
-     * @return array
      */
-    public function update_webp_metadata(array $metadata, int $attachment_id): array {
+    public function update_webp_metadata(array $metadata, int $attachment_id): array
+    {
         $file = get_attached_file($attachment_id);
         if (pathinfo($file, PATHINFO_EXTENSION) === 'webp') {
-            $metadata['file'] = str_replace(wp_upload_dir()['basedir'] . '/', '', $file);
+            $metadata['file'] = str_replace(wp_upload_dir()['basedir'].'/', '', $file);
             $metadata['mime-type'] = 'image/webp';
         }
+
         return $metadata;
     }
 }
