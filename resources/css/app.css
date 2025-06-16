@@ -94,3 +94,8 @@ input#submit {
 p {
     @apply mb-4
 }
+
+.wp-block-categories-list .cat-item,
+.wp-block-archives-list li {
+    @apply mb-2
+}
