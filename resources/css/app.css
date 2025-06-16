@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, p, time, span, label, footer {
 }
 
 a {
-    @apply text-sky-800 no-underline
+    @apply text-sky-800
 }
 
 h2.wp-block-heading,
