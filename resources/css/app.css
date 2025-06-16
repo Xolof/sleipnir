@@ -90,3 +90,7 @@ input#submit {
 .search-form button {
     @apply px-6 py-2 border-solid border-black outline cursor-pointer text-zinc-200 slpnr-button
 }
+
+p {
+    @apply mb-4
+}
