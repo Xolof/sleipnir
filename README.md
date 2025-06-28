@@ -34,3 +34,7 @@ Then upload this directory to your Wordpress themes directory.
 * Image conversion to WebP on upload.
 * Disabling of dashicons on frontend.
 * Removal of custom CSS section in admin.
+
+## Todo
+* Make it possible to install the theme with Composer.
+
