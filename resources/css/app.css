@@ -66,6 +66,10 @@ input#url,
     @apply block border-solid outline-1 focus:outline-2 p-2 w-full text-zinc-800 rounded
 }
 
+.wp-block-search {
+    @apply pb-4
+}
+
 .forminator-ui.forminator-custom-form:not(.forminator-size--small)[data-grid=open] .forminator-row:not(:last-child) {
     @apply mb-3
 }
@@ -121,4 +125,8 @@ p {
 
 .wp-block-quote {
     @apply pl-4
+}
+
+.post.type-post {
+    @apply pb-2
 }
