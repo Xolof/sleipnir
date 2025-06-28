@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, p, time, span, label, footer {
 }
 
 a {
-    @apply text-sky-800 selection:bg-sky-300
+    @apply text-sky-800 focus:outline-2 focus:outline-slate-800 hover:outline-2 hover:outline-slate-500 outline-offset-3 rounded-[1px]
 }
 
 h2.wp-block-heading,
