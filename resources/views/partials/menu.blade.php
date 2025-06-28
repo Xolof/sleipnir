@@ -14,7 +14,7 @@
         :class="{ 'translate-x-0': mobileMenuIsOpen, '-translate-x-full': !mobileMenuIsOpen }"
     >
         <div class="flex justify-between p-4">
-            <div class="text-zinc-800 text-xl">
+            <div class="text-zinc-800 text-xl flex">
                 <a href="/" class="brand block pt-2">{!! $siteName !!}</a>
             </div>
             <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl cursor-pointer px-4 py-2" aria-label="Close menu">
