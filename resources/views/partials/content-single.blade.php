@@ -7,7 +7,7 @@
     @include('partials.entry-meta')
   </header>
 
-  <div class="e-content">
+  <div class="e-content pb-4">
     @php(the_content())
   </div>
 

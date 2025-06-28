@@ -10,14 +10,14 @@
     <!-- Mobile Menu -->
     <div x-show="mobileMenuIsOpen"
         @click.away="mobileMenuIsOpen = false"
-        class="fixed inset-0 md:hidden transition-transform duration-300 bg-zinc-50 z-900 p-4"
+        class="fixed inset-0 md:hidden transition-transform duration-300 bg-zinc-50 z-900 px-4 py-8"
         :class="{ 'translate-x-0': mobileMenuIsOpen, '-translate-x-full': !mobileMenuIsOpen }"
     >
         <div class="flex justify-between p-4">
             <div class="text-zinc-800 text-xl">
                 <a href="/" class="brand block">{!! $siteName !!}</a>
             </div>
-            <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl cursor-pointer" aria-label="Close menu">
+            <button @click="mobileMenuIsOpen = false" class="text-zinc-800 text-2xl cursor-pointer px-4 py-2" aria-label="Close menu">
                 ×
             </button>
         </div>
