@@ -24,6 +24,12 @@ Then upload this directory to your Wordpress themes directory.
 
 ## Changelog
 
+### Version 0.0.2
+
+#### Added
+
+* More styling.
+
 ### Version 0.0.1
 
 #### Added
