@@ -4,25 +4,54 @@ Lightweight Wordpress theme focusing on performance and accessibility.
 
 Using Roots Sage as a foundation.
 
-## Before deploy
+## Installation
 
-Before deploying you should:
+Add the repository as a vcs repo in the repositories section of your composer.json.
 
-1. Build the JS:
+```
+{
+  "type": "vcs",
+  "url": "https://github.com/xolof/sleipnir"
+}
+```
+
+Install the package.
+
+`composer require xolof/sleipnir`
+
+Go to the themes directory. In Roots Bedrock it will be in `web/app/themes/sleipnir`.
+
+`cd web/app/themes/sleipnir`
+
+### Install the theme's dependencies.
+
+#### For development:
+`composer install`
+
+`npm i` 
+
+#### For production:
+`composer install --no-dev  --optimize-autoloader`
+
+`npm install`
 
 `npm run build`
 
-2. Install Composer dependencies for production:
-
-`composer install --no-dev  --optimize-autoloader`
-
-3. Remove node_modules:
-
 `rm -rf node_modules`
 
-Then upload this directory to your Wordpress themes directory.
+### Activate the theme
+Activate the theme in WordPress admin under Appearance >> Themes.
+
+## Start dev server 
+`npm run dev`
 
 ## Changelog
+
+### Version 0.0.3
+
+#### Added
+
+* Installation with Composer.
 
 ### Version 0.0.2
 
@@ -40,7 +69,4 @@ Then upload this directory to your Wordpress themes directory.
 * Image conversion to WebP on upload.
 * Disabling of dashicons on frontend.
 * Removal of custom CSS section in admin.
-
-## Todo
-* Make it possible to install the theme with Composer.
 
