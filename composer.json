@@ -2,43 +2,25 @@
   "name": "roots/sage",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "WordPress starter theme with a modern development workflow",
-  "homepage": "https://roots.io/sage/",
+  "description": "Lightweight Wordpress theme focusing on performance and accessibility.",
+  "homepage": "https://github.com/Xolof/sleipnir",
   "authors": [
     {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    },
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "QWp6t",
-      "email": "hi@qwp6t.me",
-      "homepage": "https://github.com/qwp6t"
-    },
-    {
-      "name": "Brandon Nifong",
-      "email": "brandon@tendency.me",
-      "homepage": "https://github.com/log1x"
+      "name": "Olof Johansson",
+      "email": "olof@liberdev.se",
+      "homepage": "https://oljo.online"
     }
   ],
   "keywords": [
     "wordpress"
   ],
-  "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
-  },
   "autoload": {
     "psr-4": {
       "App\\": "app/"
     }
   },
   "require": {
+    "composer/installers": "v2.3.0",
     "php": ">=8.2",
     "davidwebca/wordpress-menu-classes": "^2.0",
     "roots/acorn": "^5.0"
