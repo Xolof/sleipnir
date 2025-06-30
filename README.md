@@ -43,8 +43,19 @@ Go to the theme's directory. In Roots Bedrock it will be in `web/app/themes/slei
 Activate the theme in WordPress admin under Appearance >> Themes.
 
 ## Start dev server
-From the theme's directory: 
+To serve the theme's assets, go to the theme's directory and run:
+
 `npm run dev`
+
+## Serve WordPress
+You will also need to serve Wordpress. I have been using PHP's dev server with some extra workers.
+
+In the directory where index.php of WordPress is located:
+```
+#!/usr/bin/bash
+export PHP_CLI_SERVER_WORKERS=10 && \
+php -S localhost:4000
+```
 
 ## Changelog
 
